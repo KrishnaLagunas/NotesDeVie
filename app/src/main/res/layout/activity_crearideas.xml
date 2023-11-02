@@ -37,4 +37,13 @@
         android:text="" />
 
 
+    <Button
+        android:id="@+id/escribirHistoriaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escribir Historia"
+        android:onClick="abrirHistoriasActivity"
+        android:layout_centerInParent="true"
+        />
+
 </RelativeLayout>

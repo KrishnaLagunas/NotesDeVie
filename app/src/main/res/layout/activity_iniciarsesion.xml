@@ -106,7 +106,7 @@
         android:background="@drawable/casillasdetexto"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="*******"
+        android:text=""
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toStartOf="@+id/imageView9"
