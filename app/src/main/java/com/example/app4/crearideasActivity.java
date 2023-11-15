@@ -1,5 +1,6 @@
 package com.example.app4;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -8,18 +9,25 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class crearideasActivity extends AppCompatActivity {
 
     private ListView itemsList;
     private boolean isListVisible = false;
-    private EditText editTextHistorias;
-    private Button escribirHistoriaButton;
-    private static final int REQUEST_CODE_ESCRIBIR_HISTORIA = 1;
+
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -27,10 +35,38 @@ public class crearideasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crearideas);
 
+        final TextView textViewHistoria = findViewById(R.id.textViewHistoria);
+        Button botonAbrirArchivo = findViewById(R.id.botonAbrirArchivo);
+
+
         Button openButton = findViewById(R.id.open);
         itemsList = findViewById(R.id.items_list);
-        editTextHistorias = findViewById(R.id.editTextHistorias);
-        escribirHistoriaButton = findViewById(R.id.escribirHistoriaButton);
+        Button botonCrearHistoria = findViewById(R.id.botonCrearHistoria);
+        botonCrearHistoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(crearideasActivity.this, HistoriasActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        botonAbrirArchivo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Obtén el texto del TextView y pásalo a VisualizarHistoriaActivity
+                String contenido = textViewHistoria.getText().toString();
+
+                // Crea un Intent para abrir VisualizarHistoriaActivity
+                Intent intent = new Intent(crearideasActivity.this, VisualizarHistoriaActivity.class);
+                intent.putExtra("historia", contenido);
+                startActivity(intent);
+            }
+        });
+
+
+
+
 
         // Define las opciones para mostrar (texto e icono)
         final ItemModel[] items = {
@@ -97,10 +133,6 @@ public class crearideasActivity extends AppCompatActivity {
 
     }
 
-    public void abrirHistoriasActivity(View view) {
-        Intent intent = new Intent(this, HistoriasActivity.class);
-        startActivity(intent);
-    }
 
 
     private void toggleListVisibility() {
@@ -111,5 +143,8 @@ public class crearideasActivity extends AppCompatActivity {
             itemsList.setVisibility(View.VISIBLE);
             isListVisible = true;
         }
-    }
-}
+
+
+    }};
+
+

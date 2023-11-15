@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.047" />
 
+
     <TextView
         android:id="@+id/txtnom1"
         android:layout_width="107dp"
@@ -28,13 +29,13 @@
         android:fontFamily="@font/acme"
         android:text="(nombre)"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtbienvenida"
-        app:layout_constraintVertical_bias="0.106" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -43,46 +44,24 @@
         android:src="@drawable/abrazo_removebg_preview"
         app:layout_constraintBottom_toTopOf="@+id/contrasena"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtnom1" />
+        app:layout_constraintTop_toBottomOf="@+id/txtnom1"
+        app:layout_constraintVertical_bias="0.464" />
 
     <TextView
         android:id="@+id/contrasena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="32dp"
         android:fontFamily="@font/acme"
         android:text="Escribe tu contraseña"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.581"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="25dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="36dp"
-        android:src="@drawable/icons8_visible_50"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.694" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="36dp"
-        android:src="@drawable/icons8_candado_50"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.694" />
 
     <Button
         android:id="@+id/button"
@@ -90,27 +69,57 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:background="@drawable/btnstart"
+        android:backgroundTint="#FFC107"
         android:text="Start"
         android:textColor="#332072"
+        app:iconTint="#FFC107"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/editTextTextPassword1"
         android:layout_width="255dp"
         android:layout_height="25dp"
-        android:layout_marginTop="368dp"
-        android:layout_marginEnd="32dp"
         android:background="@drawable/casillasdetexto"
         android:ems="10"
+        android:hint="(ej.Juan123)"
         android:inputType="textPassword"
         android:text=""
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/imageView9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.564" />
+        app:layout_constraintVertical_bias="0.72" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="36dp"
+        android:layout_height="24dp"
+        android:src="@drawable/icons8_candado_50"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword1"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword1"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword1"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/showHidePasswordButton1"
+        android:layout_width="23dp"
+        android:layout_height="29dp"
+        android:background="@drawable/icons8_visible_50"
+        android:drawableTint="#FFC107"
+
+        android:scrollbarThumbHorizontal="@drawable/icons8_visible_50"
+        android:scrollbarThumbVertical="@drawable/icons8_visible_50"
+        app:iconTint="#FFC107"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPassword1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.719" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
